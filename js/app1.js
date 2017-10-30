@@ -72,32 +72,32 @@ boxGeoObject2.add(box2);
 boxGeoObject2.position = boxGeoEntity2.position;
 scene.add(boxGeoObject2);
 
-var pipeSpline = new THREE.CatmullRomCurve3([new THREE.Vector3(boxGeoObject2.position.x,boxGeoObject2.position.y,
-boxGeoObject2.position.z),
-new THREE.Vector3(boxGeoObject.position.x,
-    boxGeoObject.position.y,
-    boxGeoObject.position.z)]);
-var material = new THREE.MeshLambertMaterial( { color: 0xff00ff } );
-var wireframeMaterial = new THREE.MeshBasicMaterial( { color: 0xFF0000, opacity: 0.3, wireframe: true, transparent: true } );
-var params =  {
-    scale: 20,
-    extrusionSegments: 100,
-    radius: 10,
-    radiusSegments: 3,
-    closed: false,
-    animationView: false,
-    lookAhead: false,
-    cameraHelper: false
-};
-tubeGeometry = new THREE.TubeBufferGeometry( pipeSpline, params.extrusionSegments, params.radius, params.radiusSegments, params.closed );
-var group = THREE.SceneUtils.createMultiMaterialObject( tubeGeometry, [ material, wireframeMaterial ] );
-group.scale.set( params.scale, params.scale, params.scale );
-scene.add(group);
+// var pipeSpline = new THREE.CatmullRomCurve3([new THREE.Vector3(boxGeoObject2.position.x,boxGeoObject2.position.y,
+// boxGeoObject2.position.z),
+// new THREE.Vector3(boxGeoObject.position.x,
+//     boxGeoObject.position.y,
+//     boxGeoObject.position.z)]);
+// var material = new THREE.MeshLambertMaterial( { color: 0xff00ff } );
+// var wireframeMaterial = new THREE.MeshBasicMaterial( { color: 0xFF0000, opacity: 0.3, wireframe: true, transparent: true } );
+// var params =  {
+//     scale: 20,
+//     extrusionSegments: 100,
+//     radius: 10,
+//     radiusSegments: 3,
+//     closed: false,
+//     animationView: false,
+//     lookAhead: false,
+//     cameraHelper: false
+// };
+// tubeGeometry = new THREE.TubeBufferGeometry( pipeSpline, params.extrusionSegments, params.radius, params.radiusSegments, params.closed );
+// var group = THREE.SceneUtils.createMultiMaterialObject( tubeGeometry, [ material, wireframeMaterial ] );
+// group.scale.set( params.scale, params.scale, params.scale );
+// scene.add(group);
 
 var boxInit = false;
 
 
-/*app.updateEvent.addEventListener(function(frame) {
+app.updateEvent.addEventListener(function(frame) {
     var positions = [];
 // get the position and orientation (the "pose") of the user
 // in the local coordinate frame.
@@ -123,13 +123,13 @@ var boxInit = false;
         var defaultFrame = app.context.getDefaultReferenceFrame();
         // set the box's position to 10 meters away from the user.
         // First, clone the userPose postion, and add 10 to the X
-        //var boxPos_1 = userPose.position.clone();
-        //var box2Pos_1 = userPose.position.clone();
-        var boxPos_1 = new Cartesian3.fromDegrees(33.7741337,-84.3988109,21);
-        var box2Pos_1= new Cartesian3.fromDegrees(33.7748386,-84.3955992,21);
-        //boxPos_1.z -= 10;
-        //box2Pos_1.z -= 10;
-        //box2Pos_1.x += 3;
+        var boxPos_1 = userPose.position.clone();
+        var box2Pos_1 = userPose.position.clone();
+        // var boxPos_1 = new Cartesian3.fromDegrees(33.7741337,-84.3988109,21);
+        // var box2Pos_1= new Cartesian3.fromDegrees(33.7748386,-84.3955992,21);
+        boxPos_1.z -= 10;
+        box2Pos_1.z -= 10;
+        box2Pos_1.x += 3;
 
 
         // set the value of the box Entity to this local position, by
@@ -194,7 +194,7 @@ var boxInit = false;
             boxInit = true;
         }
     }
-});*/
+});
 
 app.renderEvent.addEventListener(function () {
     // set the renderers to know the current size of the viewport.
