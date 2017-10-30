@@ -177,9 +177,9 @@ app.updateEvent.addEventListener(function(frame) {
                 var material = new THREE.MeshLambertMaterial( { color: 0xff00ff } );
                 var wireframeMaterial = new THREE.MeshBasicMaterial( { color: 0xFF0000, opacity: 0.3, wireframe: true, transparent: true } );
                 var params =  {
-                    scale: 20,
+                    scale: 2,
                     extrusionSegments: 100,
-                    radius: 10,
+                    radius: 2,
                     radiusSegments: 3,
                     closed: false,
                     animationView: false,
